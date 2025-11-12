@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BSIT Message</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 100px;
+        background-color: #f4f4f9;
+      }
+      input {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
+      button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      .message {
+        margin-top: 30px;
+        font-size: 18px;
+        color: #333;
+      }
+      img {
+        margin-top: 20px;
+        width: 250px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Enter your first name 👇</h1>
+    <input type="text" id="nameInput" placeholder="Your name here" />
+    <br />
+    <button onclick="showMessage()">Submit</button>
+
+    <div class="message" id="message"></div>
+    <img id="gif" src="" style="display:none;" />
+
+    <script>
+      function showMessage() {
+        const name = document.getElementById("nameInput").value.trim();
+        const messageDiv = document.getElementById("message");
+        const gif = document.getElementById("gif");
+
+        if (name === "") {
+          messageDiv.innerHTML = "Please enter your name first!";
+          gif.style.display = "none";
+          return;
+        }
+
+        messageDiv.innerHTML = `${name.toUpperCase()}, I HOPE WE WILL STILL BE CLASSMATES THIS SECOND SEM. IF NOT, IT'S OKAY — GOODLUCK ON YOUR JOURNEY MY DUDEE!`;
+
+        gif.src = "https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif";
+        gif.style.display = "block";
+      }
+    </script>
+  </body>
+</html>
